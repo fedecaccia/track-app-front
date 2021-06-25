@@ -51,10 +51,10 @@ const App = createAppContainer(switchNavigator);
 export default () => (
   // sort providers in any order
   <TrackProvider>
-  <LocationProvider>
-    <AuthProvider>
-      <App ref={(navigator) => { setNavigator(navigator) }}/>
-    </AuthProvider>
-  </LocationProvider>
+    <LocationProvider>
+      <AuthProvider>
+        <App ref={(navigator) => { setNavigator(navigator) }}/>
+      </AuthProvider>
+    </LocationProvider>
   </TrackProvider>
 );
