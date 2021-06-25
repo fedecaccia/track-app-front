@@ -23,10 +23,10 @@ const trackListFlow = createStackNavigator({
   TrackList: TrackListScreen,
   TrackDetail: TrackDetailScreen
 });
-trackListFlow.navigationOptions = {
+trackListFlow.navigationOptions = () => ({
   title: "Tracks",
   tabBarIcon: <FontAwesome name="th-list" size={20} />
-}
+});
 
 const switchNavigator = createSwitchNavigator(
   {
@@ -36,7 +36,7 @@ const switchNavigator = createSwitchNavigator(
       Signin: SigninScreen
     }),
     mainFlow: createBottomTabNavigator({
-      trackListFlow: trackListFlow,
+      trackListFlow,
       TrackCreate: TrackCreateScreen,
       Account: AccountScreen
     })
@@ -48,8 +48,8 @@ const switchNavigator = createSwitchNavigator(
 
 const App = createAppContainer(switchNavigator);
 
+// sort providers in any order
 export default () => (
-  // sort providers in any order
   <TrackProvider>
     <LocationProvider>
       <AuthProvider>

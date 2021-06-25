@@ -5,7 +5,7 @@ import { ListItem } from "react-native-elements";
 import { Context as TrackContext } from "../context/TrackContext";
 
 const TrackListScreen = ({ navigation }) => {
-  const { fetchTracks } = useContext(TrackContext);
+  const { state, fetchTracks } = useContext(TrackContext);
   
   return <>
     <NavigationEvents onWillFocus={fetchTracks}/>
@@ -31,9 +31,9 @@ const TrackListScreen = ({ navigation }) => {
   </>;
 };
 
-TrackListScreen.navigationOptions = {
+TrackListScreen.navigationOptions = () => ({
   title: "Tracks"
-}
+});
 
 const styles = StyleSheet.create({});
 

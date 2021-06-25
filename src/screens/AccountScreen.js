@@ -20,10 +20,10 @@ const AccountScreen = () => {
   )
 };
 
-AccountScreen.navigationOptions = {
+AccountScreen.navigationOptions = () => ({
   title: "Account",
   tabBarIcon: <FontAwesome nome="gear" size={20} />
-}
+});
 
 const styles = StyleSheet.create({});
 

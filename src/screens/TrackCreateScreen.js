@@ -1,4 +1,4 @@
-// import "../_mockLocation";
+import "../_mockLocation";
 import React, { useContext, useCallback } from "react";
 import { View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
@@ -28,10 +28,10 @@ const TrackCreateScreen = ({ isFocused }) => {
   );
 };
 
-TrackCreateScreen.navigationOptions = {
+TrackCreateScreen.navigationOptions = () => ({
   title: "Add Track",
   tabBarIcon: <FontAwesome nome="plus" size={20} />
-}
+});
 
 const styles = StyleSheet.create({});
 
